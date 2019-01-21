@@ -1,0 +1,3 @@
+TequilaAllowIf firstname=Nicolas
+TequilaRequest name firstname uniqueid
+TequilaService  "Tequila docker"

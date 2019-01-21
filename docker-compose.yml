@@ -1,0 +1,11 @@
+version: '3'
+services:
+  tequila:
+    container_name: tequila
+    ports:
+      - '8888:80'
+    volumes:
+      - './data:/var/www/html'
+    build:
+      context: ./
+      dockerfile: Dockerfile-Tequila

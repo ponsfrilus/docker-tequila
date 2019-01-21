@@ -1,0 +1,8 @@
+# TequilaAllowNet 128.178
+# TequilaAllowIf  group=aasl&org=EPFL
+# TequilaAllowIf  username=possoz&org=EPFL
+# TequilaAllowIf  group=groupware
+# TequilaAllows   categorie=epfl-guests
+TequilaAllowIf droit-intranet
+TequilaRequest uniqueid name email unitid title cf unixid
+TequilaService  "Tequila docker"
