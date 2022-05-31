@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:7-apache
 LABEL authors="Nicolas Borboën <nicolas.borboen@epfl.ch>"
 WORKDIR /
 RUN apt update
