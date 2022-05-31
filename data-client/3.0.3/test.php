@@ -1,5 +1,5 @@
 <?php
-require_once("/var/www/Tequila/clients/php/tequila.php");
+require_once("/var/www/Tequila/clients/php/3.0.3/tequila.php");
 
 $oClient = new TequilaClient();
 

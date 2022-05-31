@@ -5,7 +5,7 @@ RUN apt update
 RUN curl -o tequila-php-client.tgz https://tequila.epfl.ch/download/2.0/tequila-php-client-3.0.3.tgz
 RUN tar zxvf tequila-php-client.tgz
 WORKDIR /build/tequila-3.0.3/clients/php/
-RUN mkdir -p /var/www/Tequila/clients
-RUN cp -r /build/tequila-3.0.3/clients/php /var/www/Tequila/clients/
+RUN mkdir -p /var/www/Tequila/clients/php/3.0.3/
+RUN cp -r /build/tequila-3.0.3/clients/php/* /var/www/Tequila/clients/php/3.0.3/
 RUN rm -rf /build
 WORKDIR /var/www/html
