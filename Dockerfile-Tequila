@@ -2,12 +2,9 @@ FROM php:7-apache
 LABEL authors="Nicolas Borboën <nicolas.borboen@epfl.ch>"
 WORKDIR /
 RUN apt update
-RUN which curl
 RUN curl -o tequila.tgz https://tequila.epfl.ch/download/2.0/tequila-apache-C-2.0.17.tgz
 RUN tar zxvf tequila.tgz
-RUN cd /tequila-2.0.17/Apache/C/
 WORKDIR /tequila-2.0.17/Apache/C/
-RUN cat INSTALL.en
 RUN apt install -y apache2-dev libssl-dev
 RUN mkdir -p /var/www/Tequila/Sessions
 RUN make
