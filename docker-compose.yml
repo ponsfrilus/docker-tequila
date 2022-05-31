@@ -9,3 +9,12 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile-Tequila
+  tequila-client:
+    container_name: tequila-client
+    ports:
+      - '8889:80'
+    volumes:
+      - './data-client:/var/www/html'
+    build:
+      context: ./
+      dockerfile: Dockerfile-Tequila-Client
