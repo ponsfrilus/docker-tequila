@@ -1,11 +1,20 @@
 FROM php:7-apache
 LABEL authors="Nicolas Borboën <nicolas.borboen@epfl.ch>"
+
+RUN apt-get update && apt-get install -y \
+  git \
+  && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /
-RUN apt update
 RUN curl -o tequila-php-client.tgz https://tequila.epfl.ch/download/2.0/tequila-php-client-3.0.3.tgz
 RUN tar zxvf tequila-php-client.tgz
 WORKDIR /build/tequila-3.0.3/clients/php/
 RUN mkdir -p /var/www/Tequila/clients/php/3.0.3/
 RUN cp -r /build/tequila-3.0.3/clients/php/* /var/www/Tequila/clients/php/3.0.3/
 RUN rm -rf /build
+
+RUN mkdir -p /var/www/Tequila/clients/php/4.0.0/
+WORKDIR /var/www/Tequila/clients/php/4.0.0/
+RUN git clone https://c4science.ch/source/tequila-php-client.git /var/www/Tequila/clients/php/4.0.0/
+
 WORKDIR /var/www/html
